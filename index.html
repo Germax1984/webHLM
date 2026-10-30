@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasta Luego Mascotas | Traslado y Cremación Individual</title>
+    <!-- Fuente de Google para que quede sobrio y moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome para el teléfono y WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logoMascotas.png"><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DWDT2CBMT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5DWDT2CBMT');
+</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f7f4ef !important;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding-bottom: -100; /* <--- Esto hace que la página sea un poquito más larga abajo, dejando ver el footer entero por encima de los botones flotantes */
+        }
+
+        /* HEADER / HERO SECTION */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('imagen-Webportada.jpeg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 250px 20px 150px 20px; /* <--- Bajamos el primer número a 80px para que el título arranque más arriba */
+        }
+        
+
+        .logo-container h1 {
+            font-family: 'Marck Script', cursive;
+            font-size: 6.5rem;               /* <--- Agrandado a 3.5rem para que se vea BIEN grande */
+            font-weight: 700;                /* <--- Negrita fuerte */
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7); /* <--- Sombra más marcada para que resalte */
+        }
+         
+      /* Eslogan en la misma tipografía que el título, agrandado y elegante */
+        .slogan {
+            font-family: 'Marck Script', cursive;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Frase cálida de acompañamiento */
+        .texto-golpe-vista {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: #f8f9fa;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+            font-weight: 400;
+        }
+
+        /* Destacado clarísimo de lo que hacés */
+        .badge-servicio {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            color: #ffffff;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge-servicio strong {
+            color: #72efdd; /* Un tono clarito resaltado o blanco puro */
+        }
+
+        .hero-text {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #e5e7eb;
+            font-weight: 400;
+        }
+
+          /* ==========================================
+           SECCIÓN DE OPCIONES Y TARJETAS (NUEVO)
+           ========================================== */
+
+        .opciones-seccion {
+            background-color: #f2f5f8; /* Fondo suave para que no choque con la portada */
+            padding: 40px 20px 50px 20px;
+            text-align: center;
+        }
+
+        .opciones-seccion h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .opciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 25px;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        .tarjeta-opcion {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 22px; /* Más espacio para que el box se vea más grande y robusto */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tarjeta-opcion h3,
+        .tarjeta-opcion p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tarjeta-opcion:hover {
+            transform: translateY(-5px);
+        }
+
+        .img-contenedor {
+            width: 100%;
+            height: 240px; /* Foto un poquito más alta para que luzca mejor */
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+
+        .img-contenedor img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tarjeta-opcion h3 {
+            font-size: 1.35rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .tarjeta-opcion p {
+            font-size: 0.98rem;
+            color: #555;
+            line-height: 1.5;
+        }
+    
+.tarjeta-opcion:hover {
+    transform: translateY(-5px); /* Efecto pro al pasar el mouse */
+}
+
+.img-contenedor {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.img-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción sin deformar las fotos */
+}
+
+.tarjeta-opcion h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.tarjeta-opcion p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+         /* ==========================================
+           ESTILOS SECCIÓN INFO (Quiénes somos, etc.)
+           ========================================== */
+
+        .info-seccion {
+            background-color: #ffffff; /* Fondo blanco limpio para esta sección */
+            padding: 60px 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .info-contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .info-bloque {
+            margin-bottom: 45px;
+            text-align: left; /* Alineado a la izquierda para una lectura cómoda tipo carta */
+        }
+
+        .info-bloque h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db; /* Un detallecito prolijo de línea al costado del título */
+            padding-left: 12px;
+        }
+
+        .info-bloque p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.02rem;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .info-bloque strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .cierre-texto {
+            font-style: italic;
+            color: #718096;
+            margin-top: 15px;
+        }
+
+          /* ==========================================
+           TÍTULO DE LA SECCIÓN DE TESTIMONIOS
+           ========================================== */
+
+        .testimonios-seccion-titulo {
+            background-color: #f2f5f8; /* Mantiene el fondo suave unificado */
+            padding: 50px 20px 20px 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .testimonios-seccion-titulo h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .subtitulo-testimonios {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #718096;
+            margin-bottom: 20px;
+        }
+
+        /* ==========================================
+           ESTILOS PARA EL TESTIMONIO DESTACADO
+           ========================================== */
+
+        .testimonio-destacado {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px 30px;
+            max-width: 850px;
+            margin: 0 auto 40px auto; /* Lo centra y le deja espacio abajo con las otras tarjetas */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-left: 6px solid #3498db; /* Una franja prolija al costado que le da categoría */
+            text-align: left;
+            position: relative;
+        }
+
+        .testimonio-destacado .estrellas {
+            color: #f39c12;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonio-destacado .texto-largo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.02rem;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .autor-destacado {
+            margin-top: 20px;
+            border-top: 1px solid #edf2f7;
+            padding-top: 15px;
+        }
+
+        .autor-destacado strong {
+            display: block;
+            color: #2c3e50;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .autor-destacado span {
+            font-size: 0.85rem;
+            color: #a0aec0;
+        }
+        
+        /* ==========================================
+           ESTILOS SECCIÓN TESTIMONIOS (Google Maps)
+           ========================================== */
+
+        .testimonios-seccion {
+            background-color: #f2f5f8; /* Mantenemos el tono suave cálido */
+            padding: 60px 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .testimonios-seccion h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .subtitulo-testimonios {
+            font-size: 1rem;
+            color: #718096;
+            margin-bottom: 40px;
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .tarjeta-testimonio {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .estrellas {
+            color: #f39c12; /* Color dorado para las 5 estrellas */
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .texto-testimonio {
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .autor-testimonio strong {
+            display: block;
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+
+        .autor-testimonio span {
+            font-size: 0.8rem;
+            color: #a0aec0;
+        } 
+
+        /* BOTONES FLOTANTES INFERIORES (Sticky Buttons) */
+.floating-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 15px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-float {
+            flex: 1;
+            text-align: center;
+            padding: 12px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            transition: transform 0.1s ease;
+        }
+
+        .btn-float:active {
+            transform: scale(0.97);
+        }
+
+        .btn-whatsapp {background-color: #25d366;
+            margin-right: 8px;
+        }
+
+        .btn-call {
+            background-color: #1d4ed8;
+            margin-left: 8px;
+        }
+        /* ==========================================
+           ESTILOS PIE DE PÁGINA (FOOTER)
+           ========================================== */
+
+        .footer-seccion {
+            background-color: #2c3e50; /* Un tono oscuro y sobrio para cerrar la web */
+            color: #cbd5e0;
+            padding: 30px 20px;
+            text-align: center;
+            font-family: 'Verdana', sans-serif; /* Tipografía Verdana limpia y legible */
+            font-size: 0.85rem;
+            line-height: 1.6;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer-contenido {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-seccion a {
+            color: #63b3ed; /* Un celeste claro para que destaque el enlace de Defensa al Consumidor */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-seccion a:hover {
+            text-decoration: underline;
+        }
+
+
+       /* ==========================================
+           FONDO GENERAL UNIFICADO (Tono Cremita Cálido)
+           ========================================== */
+        body {
+            background-color: #f7f4ef !important; /* Fondo crema suave, sereno y elegante */
+        }
+
+        /* Hacemos que los bloques de sección compartan el mismo fondo */
+        .info-seccion, 
+        .testimonios-seccion, 
+        .testimonios-seccion-titulo {
+            background-color: #f7f4ef !important;
+        }
+
+        /* ==========================================
+           AJUSTE RESPONSIVE PARA CELULARES
+           ========================================== */
+        @media (max-width: 768px) {
+            /* En celulares achicamos un poco los márgenes para aprovechar la pantalla */
+            body {
+                padding-bottom: 140px; /* Un poquito más de aire abajo en celu para que el footer no se esconda */
+            }
+
+            .hero {
+              padding: 100px 20px 100px 20px !important;
+            }
+
+            iframe#netlify-badge {
+              display: none !important;
+            }
+
+            /* Los botones flotantes se adaptan al ancho del celu */
+            .floating-buttons {
+                padding: 8px 10px;
+                gap: 10px;
+            }
+
+            .btn-float {
+                font-size: 0.9rem;
+                padding: 10px 5px;
+            }
+            iframe#netlify-badge {
+               display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO / IMPACTO INICIAL -->
+   <header class="hero">
+    <div class="logo-container">
+        <h1>Hasta Luego Mascotas</h1>
+        <!-- Eslogan en Marck Script grande -->
+        <p class="slogan">Un adiós con el amor que siempre le diste</p>
+    </div>
+
+    <!-- Golpe de vista: Frase cálida + detalle del servicio directo -->
+    <p class="texto-golpe-vista">
+        Sabemos que despedir a un compañero de toda la vida es un momento muy difícil. En Hasta Luego Mascotas te acompañamos con el respeto y la empatía que se merece.
+    </p>
+
+    <!-- Etiqueta clara del servicio -->
+    <div class="badge-servicio">
+        <span>Servicio de traslado y cremación individual</span> • <strong>Retiro a domicilio y veterinarias las 24hs</strong>
+    </div>
+</header>
+
+<section class="opciones-seccion">
+    <h2>Nuestras opciones de Acompañamiento</h2>
+    
+    <div class="opciones-grid">
+        <!-- Tarjeta 1: Sin Retorno -->
+        <div class="tarjeta-opcion">
+            <div class="img-contenedor">
+                <img src="sinretorno.jpg" alt="Sin Retorno">
+            </div>
+            <h3>Sin Retorno</h3>
+            <p>Cremación individual con retiro del cuerpo. Pensado para quienes desean una despedida digna y cerrar un ciclo, sin la devolución de las cenizas.</p>
+        </div>
+
+        <!-- Tarjeta 2: Empaque Biodegradable -->
+        <div class="tarjeta-opcion">
+            <div class="img-contenedor">
+                <img src="bolsabio.jpeg" alt="Empaque Biodegradable">
+            </div>
+            <h3>Con Retorno "Empaque Biodegradable"</h3>
+            <p>Cremación individual con retiro del cuerpo. Las cenizas te son devueltas con el mayor cuidado en un empaque de papel biodegradable, ideal para una despedida natural y respetuosa.</p>
+        </div>
+
+        <!-- Tarjeta 3: Cajita Personalizada -->
+        <div class="tarjeta-opcion">
+            <div class="img-contenedor">
+                <img src="cajitaweb.jpg" alt="Cajita Personalizada">
+            </div>
+            <h3>Con Retorno "Cajita Personalizada"</h3>
+            <p>Un homenaje único y totalmente adaptado a tu deseo: las cenizas se entregan en una hermosa cajita de madera que podés personalizar con su nombre o frase para recordarlo siempre con amor.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN QUIÉNES SOMOS Y POR QUÉ ELEGIRNOS -->
+    <section class="info-seccion">
+        <div class="info-contenedor">
+            
+            <div class="info-bloque">
+                <h2>¿Quiénes somos?</h2>
+                <p>Somos una familia dedicada a acompañar a otras familias en los momentos más difíciles. Entendemos que nuestras mascotas no son solo animales, sino miembros fundamentales de nuestro hogar, y nuestro propósito es brindarles una despedida a la altura del amor incondicional que nos dieron.</p>
+            </div>
+
+            <div class="info-bloque">
+                <h2>¿Por qué lo hacemos?</h2>
+                <p>Porque creemos que el respeto y la empatía son esenciales para cerrar un ciclo. Sabemos por experiencia propia lo que significa perder a un compañero fiel y, al no encontrar servicios que reflejen esa sensibilidad, decidimos crear Hasta Luego Mascotas. Lo hacemos para transformar el dolor en un recuerdo sereno, cuidando cada detalle con el mismo esmero con el que cuidamos a los nuestros.</p>
+            </div>
+
+            <div class="info-bloque">
+                <h2>¿Por qué elegirnos?</h2>
+                <p><strong>Acompañamiento empático:</strong> No somos solo un servicio, somos personas entendiendo a personas que atraviesan una pérdida.</p>
+                <p><strong>Personalización:</strong> Ofrecemos opciones únicas, como urnas personalizadas, para que el homenaje sea tan especial como lo fue su vida junto a ustedes.</p>
+                <p><strong>Compromiso y respeto:</strong> Nos encargamos de todo el proceso con la máxima profesionalidad y sensibilidad, garantizando que cada mascota reciba la despedida digna que merece.</p>
+               
+            </div>
+
+        </div>
+
+    <!-- TÍTULO DE LA SECCIÓN DE TESTIMONIOS -->
+    <div class="testimonios-seccion-titulo">
+        <h2>Palabras de quienes confían en nuestro acompañamiento</h2>
+        <p class="subtitulo-testimonios">Opiniones reales de familias en Google Maps</p>
+    </div>
+
+  <!-- TESTIMONIO DESTACADO -->
+    <div class="testimonio-destacado">
+        <div class="estrellas">★★★★★</div>
+        <p class="texto-largo">
+            "Quiero agradecer profundamente a todo el equipo la manera en que nos acompañaron en este momento tan doloroso. Despedir a un compañero de la vida nunca es fácil, y mucho menos cuando el compañero fue para mí mi hijo. Después de 16 años juntos, tener que decirle adiós fue uno de los momentos más difíciles que me tocó atravesar... Desde el primer momento encontré en ustedes algo fundamental: calidez, respeto, empatía y sobre todo mucha humanidad. No sentí que estaba atravesando simplemente un trámite, sino que estaban comprendiendo la importancia y el dolor que significaba esa despedida. 
+        </p>
+        <p class="texto-largo">
+            Agradezco muchísimo el cuidado, la delicadeza y el acompañamiento durante todo el proceso. En medio de un momento tan triste, sentí que mi hijo fue tratado con amor y respeto, lo que significó muchísimo para mí. Gracias por hacer que una despedida tan dolorosa pudiera ser también un momento de paz y amor. Me llevo una enorme gratitud por la forma en que nos acompañaron y por haber cuidado de él hasta el último momento. Gracias de corazón."
+        </p>
+        <div class="autor-destacado">
+            <strong>— T. U.</strong>
+            <span>Reseña destacada de Google Maps</span>
+        </div>
+    </div>
+
+    <!-- SECCIÓN TESTIMONIOS Y OPINIONES -->
+    <section class="testimonios-seccion">
+        <div class="testimonios-grid">
+            
+          <!-- Comentario 1 (Pau) -->
+        <div class="tarjeta-testimonio">
+            <div class="estrellas">★★★★★</div>
+            <p class="texto-testimonio">"Me sentí acompañada y comprendida. Nuestras mascotas son parte de nuestra familia y no todos lo entienden. Muchas gracias por todo."</p>
+            <div class="autor-testimonio">
+                <strong>— Pau</strong>
+                <span>Reseña en Google Maps</span>
+            </div>
+        </div>
+
+       <!-- Comentario 2 (AT) -->
+        <div class="tarjeta-testimonio">
+            <div class="estrellas">★★★★★</div>
+            <p class="texto-testimonio">"Excelente servicio de cremación de mascotas dirigida por seres humanos cálidos y contenedores. Estoy realmente satisfecha con las urnas y el retrato de mi fiel llamado K.A. La impresión de la huella no lo esperaba, me encantó, gracias."</p>
+            <div class="autor-testimonio">
+                <strong>— A. T.</strong>
+                <span>Reseña en Google Maps</span>
+            </div>
+        </div>
+
+       <!-- Comentario 3 (L. U.) -->
+        <div class="tarjeta-testimonio">
+            <div class="estrellas">★★★★★</div>
+            <p class="texto-testimonio">"Excelente. Se nota que saben que no es solo un animal, sino que es un miembro de la familia y muy agradecida por su buen trato, su respeto y calidez."</p>
+            <div class="autor-testimonio">
+                <strong>— L. U.</strong>
+                <span>Reseña en Google Maps</span>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+        <!-- BOTONES FLOTANTES FIJOS ABAJO (El secreto de la conversión) -->
+    <div class="floating-buttons">
+   <a href="https://wa.me/5491162653338?text=Hola,%20necesito%20consultar%20por%20el%20servicio" class="btn-float btn-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp fa-lg"></i> WhatsApp
+</a>
+        <!-- Reemplazar número para llamada directa -->
+        <a href="tel:5491162653338" class="btn-float btn-call">
+            <i class="fa-solid fa-phone"></i> Atencion Inmediata
+        </a>
+    </div>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="footer-seccion">
+        <div class="footer-contenido">
+            <p>
+                &copy; 2026 Hasta Luego Mascotas. Todos los derechos reservados. | Servicio de logística, traslado y gestión de cremación para mascotas en CABA y GBA. Operamos con instalaciones autorizadas. | 
+                <a href="https://www.buenosaires.gob.ar/defensaconsumidor" target="_blank" rel="noopener">Defensa del Consumidor CABA</a>.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
