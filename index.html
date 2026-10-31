@@ -679,18 +679,24 @@
         </div>
     </footer>
 
-    <script>
-       function matarCartel() {
-       const badges = document.querySelectorAll('#netlify-badge, iframe[src*="netlify"], div[style*="z-index: 2147483647"]');
-       badges.forEach(b => b.remove());
-       }
-        // Ejecutar al toque y mantenerlo bloqueado cada 100 milisegundos
-      if (document.readyState === 'loading') {
-       document.addEventListener('DOMContentLoaded', matarCartel);
-       } else {
-       matarCartel();
-       }
-       setInterval(matarCartel, 100);
+   <script>
+  function destruirNetlify() {
+    // Busca todos los iframes, divs o enlaces que tengan la marca de agua
+    const elementos = document.querySelectorAll('iframe, div, a');
+    elementos.forEach(el => {
+      const html = el.outerHTML || '';
+      if (html.includes('netlify-badge') || html.includes('netlify.com/experimental') || (el.shadowRoot && el.shadowRoot.innerHTML.includes('netlify'))) {
+        el.remove();
+      }
+    });
+    // Específico para el contenedor flotante si llega a existir
+    const badgeDiv = document.querySelector('div[style*="z-index"]');
+    if (badgeDiv && badgeDiv.innerText.includes('Netlify')) {
+      badgeDiv.remove();
+    }
+  }
+  
+  setInterval(destruirNetlify, 50);
 </script>
 </body>
 </html>
