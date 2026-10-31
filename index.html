@@ -446,7 +446,7 @@
         }
 
         .btn-float {
-            animation: latidoSutil 4s infinite ease-in-out;
+            animation: latidoSutil 4.5s infinite ease-in-out;
         }
         /* ==========================================
            ESTILOS PIE DE PÁGINA (FOOTER)
@@ -503,7 +503,7 @@
             }
 
             .hero {
-              padding: 50px 20px 50px 20px !important;
+              padding: 30px 20px 30px 20px !important;
             }  
     
             /* Los botones flotantes se adaptan al ancho del celu */
@@ -680,14 +680,11 @@
     </footer>
 
     <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const badge = document.querySelector('iframe#netlify-badge') || document.querySelector('.netlify-badge');
-    if (badge) badge.remove();
-    setTimeout(() => {
-      const delayedBadge = document.querySelector('iframe#netlify-badge') || document.querySelector('.netlify-badge');
-      if (delayedBadge) delayedBadge.remove();
-    }, 500);
-  });
-</script>
+      const observer = new MutationObserver((mutations) => {
+      const badges = document.querySelectorAll('iframe#netlify-badge, .netlify-badge, div[id*="netlify"], a[href*="netlify.com"]');
+      badges.forEach(badge => badge.remove());
+    });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    </script>>
 </body>
 </html>
