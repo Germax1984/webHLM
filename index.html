@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="logoMascotas.png"><!-- Google tag (gtag.js) -->
+    <link rel="icon" type="image/png" href="logohasta.png"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DWDT2CBMT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -446,7 +446,7 @@
         }
 
         .btn-float {
-            animation: latidoSutil 2.5s infinite ease-in-out;
+            animation: latidoSutil 3s infinite ease-in-out;
         }
         /* ==========================================
            ESTILOS PIE DE PÁGINA (FOOTER)
@@ -503,11 +503,13 @@
             }
 
             .hero {
-              padding: 100px 20px 100px 20px !important;
+              padding: 80px 20px 80px 20px !important;
             }
-
-            iframe#netlify-badge {
-              display: none !important;
+            
+            [id*="netlify"], .netlify-badge, iframe[src*="netlify"] {
+                display: none !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
             }
 
             /* Los botones flotantes se adaptan al ancho del celu */
