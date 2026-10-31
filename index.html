@@ -680,11 +680,17 @@
     </footer>
 
     <script>
-      const observer = new MutationObserver((mutations) => {
-      const badges = document.querySelectorAll('iframe#netlify-badge, .netlify-badge, div[id*="netlify"], a[href*="netlify.com"]');
-      badges.forEach(badge => badge.remove());
-    });
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-    </script>>
+       function matarCartel() {
+       const badges = document.querySelectorAll('#netlify-badge, iframe[src*="netlify"], div[style*="z-index: 2147483647"]');
+       badges.forEach(b => b.remove());
+       }
+        // Ejecutar al toque y mantenerlo bloqueado cada 100 milisegundos
+      if (document.readyState === 'loading') {
+       document.addEventListener('DOMContentLoaded', matarCartel);
+       } else {
+       matarCartel();
+       }
+       setInterval(matarCartel, 100);
+</script>
 </body>
 </html>
