@@ -446,7 +446,7 @@
         }
 
         .btn-float {
-            animation: latidoSutil 3s infinite ease-in-out;
+            animation: latidoSutil 4s infinite ease-in-out;
         }
         /* ==========================================
            ESTILOS PIE DE PÁGINA (FOOTER)
@@ -504,14 +504,8 @@
 
             .hero {
               padding: 50px 20px 50px 20px !important;
-            }
-            
-            [id*="netlify"], .netlify-badge, iframe[src*="netlify"] {
-                display: none !important;
-                visibility: hidden !important;
-                pointer-events: none !important;
-            }
-
+            }  
+    
             /* Los botones flotantes se adaptan al ancho del celu */
             .floating-buttons {
                 padding: 8px 10px;
@@ -684,5 +678,16 @@
             </p>
         </div>
     </footer>
+
+    <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const badge = document.querySelector('iframe#netlify-badge') || document.querySelector('.netlify-badge');
+    if (badge) badge.remove();
+    setTimeout(() => {
+      const delayedBadge = document.querySelector('iframe#netlify-badge') || document.querySelector('.netlify-badge');
+      if (delayedBadge) delayedBadge.remove();
+    }, 500);
+  });
+</script>
 </body>
 </html>
