@@ -493,32 +493,47 @@
         .testimonios-seccion-titulo {
             background-color: #f7f4ef !important;
         }
+/* ===================================================
+   AJUSTE DE ALTURA Y TIPOGRAFÍA EXPANDIDA EN MOBILE
+   =================================================== */
 @media (max-width: 768px) {
-    /* Ajustamos el bloque principal para ganar un poco más de jerarquía */
+    /* Le damos más altura mínima para que estire hacia abajo */
     .hero {
-        padding: 30px 18px 30px 18px !important;
+        min-height: 85vh !important; /* Ocupa el 85% de la pantalla */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding: 50px 20px 40px 20px !important; 
     }
 
-    /* Agrandamos el título principal ("Hasta Luego Mascotas") */
+    /* Título principal más presente */
     .hero h1, .hero .titulo-principal {
-        font-size: 3.1rem !important;
+        font-size: 3.5rem !important;
         line-height: 1.15 !important;
-        margin-bottom: 8px !important;
-    }
-
-    /* Agrandamos el eslogan cursivo ("Un adiós con el amor...") */
-    .hero h2, .hero .eslogan {
-        font-size: 1.25rem !important;
-        line-height: 1.3 !important;
         margin-bottom: 15px !important;
     }
 
-    /* Párrafo descriptivo bien legible */
-    .hero p, .hero .subtitulo {
-        font-size: 1.05rem !important;
-        line-height: 1.4 !important;
+    /* Eslogan/Subtítulo intermedio */
+    .hero h2, .hero .eslogan {
+        font-size: 1.6rem !important;
+        line-height: 1.35 !important;
         margin-bottom: 20px !important;
     }
+
+    /* Párrafo descriptivo con mejor lectura */
+    .hero p, .hero .subtitulo {
+        font-size: 1.15rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* Recuadro de los servicios destacados */
+    .hero .caja-destacada,
+    .hero .servicio-destacado {
+        padding: 18px 15px !important;
+        font-size: 1.1rem !important;
+    }
+
 
 
         /* Los botones flotantes se adaptan al ancho del celu */
