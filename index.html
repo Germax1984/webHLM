@@ -120,61 +120,28 @@
         }
 
         .opciones-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 25px;
-            max-width: 1150px;
-            margin: 0 auto;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
 
-        .tarjeta-opcion {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 22px; /* Más espacio para que el box se vea más grande y robusto */
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            transition: transform 0.2s ease;
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-        }
+.tarjeta-opcion {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-        .tarjeta-opcion h3,
-        .tarjeta-opcion p {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .tarjeta-opcion:hover {
-            transform: translateY(-5px);
-        }
-
-        .img-contenedor {
-            width: 100%;
-            height: 240px; /* Foto un poquito más alta para que luzca mejor */
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 18px;
-        }
-
-        .img-contenedor img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .tarjeta-opcion h3 {
-            font-size: 1.35rem;
-            color: #2c3e50;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .tarjeta-opcion p {
-            font-size: 0.98rem;
-            color: #555;
-            line-height: 1.5;
-        }
-    
 .tarjeta-opcion:hover {
-    transform: translateY(-5px); /* Efecto pro al pasar el mouse */
+    transform: translateY(-5px);
 }
 
 .img-contenedor {
@@ -188,19 +155,39 @@
 .img-contenedor img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantiene la proporción sin deformar las fotos */
+    object-fit: cover;
 }
 
 .tarjeta-opcion h3 {
     font-size: 1.3rem;
     color: #2c3e50;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .tarjeta-opcion p {
     font-size: 0.95rem;
     color: #666;
     line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.btn-vet-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    margin-top: auto;
+}
+
+.btn-vet-whatsapp:hover {
+    background-color: #1ebe57;
 }
 
          /* ==========================================
@@ -605,6 +592,19 @@
             <p>Un homenaje único y totalmente adaptado a tu deseo: las cenizas se entregan en una hermosa cajita de madera que podés personalizar con su nombre o frase para recordarlo siempre con amor.</p>
         </div>
     </div>
+<!-- Tarjeta 4: Eutanasia Domiciliaria (Coordinación Veterinaria) -->
+        <div class="tarjeta-opcion">
+            <div>
+                <div class="img-contenedor">
+                    <img src="eutanasia.jpeg" alt="Asistencia Veterinaria Domiciliaria">
+                </div>
+                <h3>Eutanasia Domiciliaria</h3>
+                <p>Entendemos lo difícil de este momento. Te conectamos con médicos veterinarios matriculados independientes para brindar una despedida asistida en la paz de tu hogar.</p>
+            </div>
+            <a href="https://wa.me/5491176435475?text=Hola%2C%20vengo%20de%20Hasta%20Luego%20Mascotas%20y%20necesito%20consultar%20por%20asistencia%20veterinaria%20a%20domicilio." target="_blank" rel="noopener noreferrer" class="btn-vet-whatsapp">
+                Consultar con el Veterinario
+            </a>
+        </div>
 </section>
 
 <!-- SECCIÓN QUIÉNES SOMOS Y POR QUÉ ELEGIRNOS -->
@@ -713,24 +713,5 @@ x
         </div>
     </footer>
 
-   <script>
-  function destruirNetlify() {
-    // Busca todos los iframes, divs o enlaces que tengan la marca de agua
-    const elementos = document.querySelectorAll('iframe, div, a');
-    elementos.forEach(el => {
-      const html = el.outerHTML || '';
-      if (html.includes('netlify-badge') || html.includes('netlify.com/experimental') || (el.shadowRoot && el.shadowRoot.innerHTML.includes('netlify'))) {
-        el.remove();
-      }
-    });
-    // Específico para el contenedor flotante si llega a existir
-    const badgeDiv = document.querySelector('div[style*="z-index"]');
-    if (badgeDiv && badgeDiv.innerText.includes('Netlify')) {
-      badgeDiv.remove();
-    }
-  }
-  
-  setInterval(destruirNetlify, 50);
-</script>
 </body>
 </html>
